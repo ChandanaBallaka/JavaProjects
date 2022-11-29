@@ -12,15 +12,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class SmsService
 {
-    private static final String ACCOUNT_SID="ACbff437a6ad335d1783f64955b6ae34d3";
-    private static final String AUTH_ID="aff9ed42ddcc3471043dddf1e4426c1c";
+    private static final String ACCOUNT_SID="sid";
+    private static final String AUTH_ID="auth";
     static
     {
         Twilio.init(ACCOUNT_SID,AUTH_ID);
     }
     public boolean sendSms(String mobileNumber, String tfaCode)
     {
-        Message.creator(new PhoneNumber(mobileNumber), new PhoneNumber("+17817454682"),
+        Message.creator(new PhoneNumber(mobileNumber), new PhoneNumber("+no"),
                 "Your Two Factor AUthentication code is:"+tfaCode).create();
         return false;
     }
