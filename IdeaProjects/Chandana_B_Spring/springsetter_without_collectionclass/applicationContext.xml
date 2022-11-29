@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id = "answer1" class = "com.practice.Answer ">
+        <property name="id" value = "1"></property>
+        <property name="name" value = "Java for begginers"></property>
+        <property name="by" value = "code with Harry"></property>
+    </bean>
+    <bean id = "answer2" class = "com.practice.Answer ">
+        <property name="id" value = "1"></property>
+        <property name="name" value = "wHAT IS Java"></property>
+        <property name="by" value = "Ram"></property>
+    </bean>
+    <bean id = "q" class = "com.practice.Question ">
+        <property name="id" value = "1"></property>
+        <property name="name" value = "Where can I learn Java"></property>
+
+        <property name="answers">
+            <list>
+                <ref bean ="answer1"/>
+                <ref bean = "answer2"/>
+            </list>
+        </property>
+    </bean>
+</beans>
